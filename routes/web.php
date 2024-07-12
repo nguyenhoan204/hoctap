@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\ProductControoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +18,15 @@ Route::get('/', function () {
     echo 'trang chủ';
 });
 
-Route::get('/test', function () {
-    echo '123';
+Route::get('test', function () {
+    echo "123";
 });
 
-Route::get('/list-user',[UserController::class,'showUser']);
+Route::get('list-product',[ProductControoller::class,'showProduct']);
 
-Route::get('/list-user/{id}',[UserController::class,'getUser']);
+//slug
+Route::get('get-product/{id}/{name?}',[ProductControoller::class,'getProduct']);
 
+//param
+
+Route::get('update-product',[ProductControoller::class,'updateProduct']);
